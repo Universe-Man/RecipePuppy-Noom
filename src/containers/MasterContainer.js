@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchBar from '../components/SearchBar';
+import ResultsList from '../components/ResultsList';
 
 class MasterContainer extends React.Component {
   constructor() {
@@ -9,7 +11,8 @@ class MasterContainer extends React.Component {
   render() {
     return(
       <div id="MasterContainer">
-        
+        <SearchBar />
+        <ResultsList />
 
 
 
@@ -19,3 +22,5 @@ class MasterContainer extends React.Component {
   }
 
 }
+
+export default MasterContainer;
