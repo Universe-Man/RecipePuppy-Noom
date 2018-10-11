@@ -2,15 +2,26 @@ import React from 'react';
 import ListItem from './ListItem';
 
 const ResultsList = (props) => {
+
+  // componentWillReceiveProps(){
+  //   if (props.allRecipes.length === 0){
+  //     return(
+  //       <div>Sorry but it seems we don't have that recipe.</div>
+  //     )
+  //   }
+  // }
+console.log(props.allRecipes);
   if (props.allRecipes.length === 0){
     return(
-      <div>Sorry but it seems we don't have that recipe.</div>
+      <div id="ResultsList">
+        No results have been found.
+      </div>
     )
   } else {
-    const allRecipes = props.allRecipes.map(r => <ListItem recipe={r}/>)
-    console.log(allRecipes);
+    const allRecipes = props.allRecipes.map(r => <ListItem recipe={r} id={r.id} key={r.id}/>)
+    console.log("allRecipes in ResultsList", allRecipes);
     return(
-      <div>Oh nose!</div>
+      <ol>{allRecipes}</ol>
     )
   }
   // if (props.displayedRecipes === []) {
