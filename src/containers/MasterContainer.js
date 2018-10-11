@@ -8,7 +8,7 @@ class MasterContainer extends React.Component {
     this.state = {
       searchTerm: "",
       allRecipes: [],
-      displayedRecipes: ["a", "b", "c"],
+      // displayedRecipes: ["a", "b", "c"],
     }
   }
 
@@ -20,20 +20,8 @@ class MasterContainer extends React.Component {
   }
 
   filterRecipes = () => {
-    console.log('fetching...');
-    // WRITTEN TO ATTEMPT A LOCAL CHECK INSTEAD OF HITTING TH API EVERYTIME
-    // let searchWord = this.state.searchTerm
-    // debugger
-    // if (this.state.allRecipes.includes(searchWord)) {
-    //   let filteredRecipes = this.state.allRecipes.filter(recipe => recipe.title.toLowerCase().includes(searchWord.toLowerCase()))
-    //   this.setState({
-    //     displayedRecipes: filteredRecipes
-    //   })
-    // } else {
-      // console.log("gotta fetch it from the API");
-    // }
 
-
+  }
 
   getSearchTerm = (event) => {
     this.setState({
@@ -41,12 +29,13 @@ class MasterContainer extends React.Component {
     }, () => {setTimeout(this.filterRecipes, 500)})
   }
 
+
   render() {
     return(
       <div id="MasterContainer">
         <h1>WELCOME TO RECIPE PUPPY!!</h1>
         <SearchBar getSearchTerm={this.getSearchTerm} />
-        <ResultsList displayedRecipes={this.state.displayedRecipes}/>
+        <ResultsList allRecipes={this.state.allRecipes}/>
 
 
 

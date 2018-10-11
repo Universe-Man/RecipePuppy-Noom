@@ -1,30 +1,37 @@
 import React from 'react';
+import ListItem from './ListItem';
 
 const ResultsList = (props) => {
-
-  console.log("this is props in the results list", props.displayedRecipes);
-  // displayStuff = () => {
-  //
-  // }
-  if (props.displayedRecipes === []) {
+  if (props.allRecipes.length === 0){
     return(
-      <div id="ResultsList">
-        <ol id="RL-OL">
-        </ol>
-      </div>
+      <div>Sorry but it seems we don't have that recipe.</div>
     )
   } else {
-    for (let i = 0; i < props.displayedRecipes.length; i++){
-      console.log("in the loop", i); 
-    }
+    const allRecipes = props.allRecipes.map(r => <ListItem recipe={r}/>)
+    console.log(allRecipes);
     return(
-      <div id="ResultsList">
-        <ol id="RL-OL">
-          {props.displayedRecipes}
-        </ol>
-      </div>
+      <div>Oh nose!</div>
     )
   }
+  // if (props.displayedRecipes === []) {
+  //   return(
+  //     <div id="ResultsList">
+  //       <ol id="RL-OL">
+  //       </ol>
+  //     </div>
+  //   )
+  // } else {
+  //   for (let i = 0; i < props.displayedRecipes.length; i++){
+  //     console.log("in the loop", i);
+  //   }
+  //   return(
+  //     <div id="ResultsList">
+  //       <ol id="RL-OL">
+  //         <ListItem />
+  //       </ol>
+  //     </div>
+  //   )
+  // }
 }
 
 
