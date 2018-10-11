@@ -8,7 +8,7 @@ class MasterContainer extends React.Component {
     this.state = {
       searchTerm: "",
       allRecipes: [],
-      // displayedRecipes: ["a", "b", "c"],
+      filteredRecipes: [],
     }
   }
 
@@ -20,7 +20,11 @@ class MasterContainer extends React.Component {
   }
 
   filterRecipes = () => {
-
+    let allTheRecipes = this.state.allRecipes
+    let filteredRecipes = allTheRecipes.filter(recipe => recipe.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+    this.setState({
+      filteredRecipes: filteredRecipes
+    })
   }
 
   getSearchTerm = (event) => {
@@ -35,7 +39,7 @@ class MasterContainer extends React.Component {
       <div id="MasterContainer">
         <h1>WELCOME TO RECIPE PUPPY!!</h1>
         <SearchBar getSearchTerm={this.getSearchTerm} />
-        <ResultsList allRecipes={this.state.allRecipes}/>
+        <ResultsList filteredRecipes={this.state.filteredRecipes}/>
 
 
 
