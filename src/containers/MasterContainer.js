@@ -33,21 +33,15 @@ class MasterContainer extends React.Component {
     }, () => {setTimeout(this.filterRecipes, 500)})
   }
 
-
   render() {
     return(
       <div id="MasterContainer">
         <h1>WELCOME TO RECIPE PUPPY!!</h1>
         <SearchBar getSearchTerm={this.getSearchTerm} />
         <ResultsList filteredRecipes={this.state.filteredRecipes}/>
-
-
-
-
       </div>
     )
   }
-
 }
 
 export default MasterContainer;

@@ -1,22 +1,15 @@
 import React from 'react';
 
-class ListItem extends React.Component {
-  constructor(){
-    super();
-    this.state = {}
-  }
+const ListItem = (props) => {
 
-  render(){
-    console.log("LOOK AT ME", this.props.recipe);
-    return(
-      <li>
-        <img src={this.props.recipe.href}></img>
-        <h2>{this.props.recipe.title}</h2>
-        <p>{this.props.recipe.ingredients}</p>
-
-      </li>
-    )
-  }
+  return(
+    <li>
+      <img src={props.recipe.thumbnail}></img>
+      <h2>{props.recipe.title}</h2>
+      <a href={props.recipe.href} target="_blank">Choose Recipe</a>
+      <p>{props.recipe.ingredients}</p>
+    </li>
+  )  
 }
 
 export default ListItem;
