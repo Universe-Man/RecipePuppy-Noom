@@ -1,3 +1,12 @@
+Open your terminal and change directory to "recipe-puppy-noom".
+
+Start the application by entering "npm start" in your terminal.
+(You may need to install npm or yarn first; React's instructions to do so are below)
+
+
+////////////////////// REACT README /////////////////////////////////////
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
