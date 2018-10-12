@@ -16,7 +16,7 @@ class MasterContainer extends React.Component {
     fetch("https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/")
       .then(res => res.json())
       .then(json => this.setState({
-        allRecipes: json.results}))
+        allRecipes: json.results}, () => {this.filterRecipes()}))
   }
 
   filterRecipes = () => {

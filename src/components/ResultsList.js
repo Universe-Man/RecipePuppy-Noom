@@ -6,6 +6,7 @@ const ResultsList = (props) => {
   if (props.filteredRecipes.length === 0){
     return(
       <div id="ResultsList">
+        <br></br>
         No results have been found.
       </div>
     )
